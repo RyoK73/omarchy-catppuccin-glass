@@ -1,23 +1,14 @@
 return {
-	{
-		"catppuccin/nvim",
-		name = "catppuccin",
-		priority = 1000,
-		config = function()
-			require("catppuccin").setup({
-				flavour = "mocha",
-				transparent_background = true,
-				float = {
-					transparent = true,
-					solid = false,
-				},
-			})
-		end,
-	},
-	{
-		"LazyVim/LazyVim",
-		opts = {
-			colorscheme = "catppuccin-nvim",
-		},
-	},
+    {
+        "navarasu/onedark.nvim",
+        priority = 1000,
+        config = function()
+            require("onedark").setup({
+                style = "warm",
+                toggle_style_key = "<leader>ts",
+                toggle_style_list = { "dark", "darker", "cool", "deep", "warm", "warmer", "light" }, -- List of styles to toggle between
+            })
+            require("onedark").load()
+        end,
+    }
 }
